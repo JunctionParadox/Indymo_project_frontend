@@ -1,0 +1,98 @@
+#first {
+    left: 10%;
+    position: fixed;
+    text-align: left;
+    top: 15%;
+    width: 35%;
+}
+
+#last {
+    right: 10%;
+    position: fixed;
+    text-align: left;
+    top: 15%;
+    width: 35%;
+}
+
+#email {
+    left: 10%;
+    position: fixed;
+    text-align: left;
+    top: 35%;
+    width: 35%;
+}
+
+#role {
+    right: 10%;
+    position: fixed;
+    text-align: left;
+    top: 35%;
+    width: 35%;
+}
+
+#pass {
+    left: 10%;
+    position: fixed;
+    text-align: left;
+    top: 55%;
+    width: 35%;
+}
+
+#confirm {
+    right: 10%;
+    position: fixed;
+    text-align: left;
+    top: 55%;
+    width: 35%;
+}
+
+.registerform {
+    font-size: 20px;
+    padding: 20px 20px;
+    width: 90%;
+}
+  
+.registerheader {
+    color: #798089;
+    font-size: 40px;
+    text-align: center;
+}
+
+.registerlabel {
+    display:flex;
+    flex-direction:column;
+}
+
+.registerpage {
+    background-color:#ffffff;
+    border-color: #d9c444;
+    border-radius: 10px;
+    border-style: groove;
+    height: 800px;
+    margin: auto;
+    transform: translateY(5%);
+    width: 1400px;
+}
+  
+.registerparagraph {
+    color: #798089;
+    font-size: 28px;
+    position: relative;
+    text-align: center;
+    transform: translateY(-30%);
+}
+
+.submitregistration {
+    background-image: linear-gradient(#fcea03, #bfb100);
+    border: none;
+    border-radius: 12px;
+    bottom: 10%;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
+    left: 10%;
+    margin: 0 auto;
+    padding: 30px 50px;
+    position: fixed;;
+}
