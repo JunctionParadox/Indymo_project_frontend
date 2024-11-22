@@ -6,20 +6,35 @@ function RegistrationPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const FORM_DATA = new FormData(e.currentTarget);
-        const FIRST_NAME = FORM_DATA.get('firstname');
-        const LAST_NAME = FORM_DATA.get('lastname');
+        const NAME = FORM_DATA.get('firstname');
+        const SURNAME = FORM_DATA.get('lastname');
         const EMAIL = FORM_DATA.get('email');
         const PASSWORD = FORM_DATA.get('password');
-        const USER_ROLE = FORM_DATA.get('userrole')
+        const ROLE = parseInt(FORM_DATA.get('userrole'));
 
-        //const REGISTRATION = {FIRST_NAME, LAST_NAME, EMAIL, PASSWORD};
+        const REGISTRATION = {NAME, SURNAME, EMAIL, PASSWORD, ROLE};
+        const JSONBODY = JSON.stringify({ 
+            "Name": REGISTRATION.NAME,
+            "Surname": REGISTRATION.SURNAME ,
+            "Email": REGISTRATION.EMAIL,
+            "Password": REGISTRATION.PASSWORD,
+            "Role": REGISTRATION.ROLE
+        })
     
-    //fetch('http://localhost:8000/user', {
-    //    method: 'POST',
-    //    body: JSON.stringify(registration)
-    //})
+    fetch('https://localhost:7171/api/User/register', {
+       method: 'POST',
+       headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+        body: JSONBODY
+    })
+    .then((response) => {
+        if(!response.ok) throw new Error(response.status);
+        else return console.log(response);//response.json();
+      })
 
-    alert(JSON.stringify({FIRST_NAME, LAST_NAME, EMAIL, USER_ROLE}));
+     console.log(JSONBODY)
     }
 
     return (
