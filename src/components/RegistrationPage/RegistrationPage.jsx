@@ -21,7 +21,7 @@ function RegistrationPage() {
             "Role": REGISTRATION.ROLE
         })
     
-    fetch('https://localhost:7171/api/User/register', {
+    fetch('https://localhost:7171/api/users/register', {
        method: 'POST',
        headers: {
         'Accept': 'application/json',
@@ -38,48 +38,48 @@ function RegistrationPage() {
     }
 
     return (
-        <div class='registerpage'>
+        <div className='registerpage'>
             <form onSubmit={handleSubmit}>
-                <h1 class='registerheader'>
+                <h1 className='registerheader'>
                     Create user
                 </h1>
-                <p class='registerparagraph' id='first'>
-                    <label for='firstname' class='registerlabel'>First name:</label>
+                <p className='registerparagraph' id='first'>
+                    <label for='firstname' className='registerlabel'>First name:</label>
                     <p />
-                    <input name='firstname' class='registerform' type='text' />
+                    <input name='firstname' className='registerform' type='text' />
                 </p>
-                <p class='registerparagraph' id='last'>
-                    <label for='lastname' class='registerlabel'>Last name:</label>
+                <p className='registerparagraph' id='last'>
+                    <label for='lastname' className='registerlabel'>Last name:</label>
                     <p />
-                    <input name='lastname' class='registerform' type='text' />
+                    <input name='lastname' className='registerform' type='text' />
                 </p>
-                <p class='registerparagraph' id='email'>
-                    <label for='email' class='registerlabel'>Email adress:</label>
+                <p className='registerparagraph' id='email'>
+                    <label for='email' className='registerlabel'>Email adress:</label>
                     <p />
-                    <input name='email' class='registerform' type='text' />
+                    <input name='email' className='registerform' type='text' />
                 </p>
-                <p class='registerparagraph' id='role'>
-                    <label for='userrole' class='registerlabel'>User role:</label>
+                <p className='registerparagraph' id='role'>
+                    <label for='userrole' className='registerlabel'>User role:</label>
                     <p />
-                    <select name='userrole' class='registerform'>
+                    <select name='userrole' className='registerform'>
                         <option value="1">Analyst</option>
                         <option value="2">Temporary worker</option>
                         <option value="3">Client</option>
                         <option value="4">Administrator</option>
                     </select>
                 </p>
-                <p class='registerparagraph' id='pass'>
-                    <label for='password' class='registerlabel'>Password:</label>
+                <p className='registerparagraph' id='pass'>
+                    <label for='password' className='registerlabel'>Password:</label>
                     <p />
-                    <input name='password' class='registerform' type='password' />
+                    <input name='password' className='registerform' type='password' />
                 </p>
-                <p class='registerparagraph' id='confirm'>
-                    <label for='confirm' class='registerlabel'>Confirm password:</label>
+                <p className='registerparagraph' id='confirm'>
+                    <label for='confirm' className='registerlabel'>Confirm password:</label>
                     <p />
-                    <input name='confirm' class='registerform' type='password' />
+                    <input name='confirm' className='registerform' type='password' />
                 </p>
                 <p>
-                    <button class='submitregistration' type='submit'>Create user</button>
+                    <button className='submitregistration' type='submit'>Create user</button>
                 </p>
             </form>
         </div>
