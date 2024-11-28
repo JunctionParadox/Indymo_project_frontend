@@ -46,6 +46,32 @@
     width: 35%;
 }
 
+.dialogButton {
+    cursor: pointer;
+    bottom: 5%;
+    height: 20%;
+    position: absolute;
+    right: 35%;
+    width: 30%;
+}
+
+.registerdialog {
+    background-color: #444444;
+    border-style: solid;
+    border-color: #798089;
+    color: #ffffff;
+    font-size: 32px;
+    height: 200px;
+    left: 500px;
+    line-height: 1.2;
+    position: absolute;
+    text-align:center;
+    top: 250px;
+    vertical-align: middle;
+    width: 400px;
+    z-index: 1;
+}
+
 .registerform {
     font-size: 20px;
     padding: 20px 20px;
