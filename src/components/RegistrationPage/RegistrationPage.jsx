@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './RegistrationPage.css';
 
 function RegistrationPage() {
+    const [dialog, setDialog] = useState(0)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,8 +32,9 @@ function RegistrationPage() {
     })
     .then((response) => {
         if(!response.ok) throw new Error(response.status);
-        else return console.log(response);//response.json();
+        else return console.log(response);
       })
+    .then(setDialog(1))
 
      console.log(JSONBODY)
     }
@@ -44,22 +46,22 @@ function RegistrationPage() {
                     Create user
                 </h1>
                 <p className='registerparagraph' id='first'>
-                    <label for='firstname' className='registerlabel'>First name:</label>
+                    <label htmlFor='firstname' className='registerlabel'>First name:</label>
                     <p />
                     <input name='firstname' className='registerform' type='text' />
                 </p>
                 <p className='registerparagraph' id='last'>
-                    <label for='lastname' className='registerlabel'>Last name:</label>
+                    <label htmlFor='lastname' className='registerlabel'>Last name:</label>
                     <p />
                     <input name='lastname' className='registerform' type='text' />
                 </p>
                 <p className='registerparagraph' id='email'>
-                    <label for='email' className='registerlabel'>Email adress:</label>
+                    <label htmlFor='email' className='registerlabel'>Email adress:</label>
                     <p />
                     <input name='email' className='registerform' type='text' />
                 </p>
                 <p className='registerparagraph' id='role'>
-                    <label for='userrole' className='registerlabel'>User role:</label>
+                    <label htmlFor='userrole' className='registerlabel'>User role:</label>
                     <p />
                     <select name='userrole' className='registerform'>
                         <option value="1">Analyst</option>
@@ -69,12 +71,12 @@ function RegistrationPage() {
                     </select>
                 </p>
                 <p className='registerparagraph' id='pass'>
-                    <label for='password' className='registerlabel'>Password:</label>
+                    <label htmlFor='password' className='registerlabel'>Password:</label>
                     <p />
                     <input name='password' className='registerform' type='password' />
                 </p>
                 <p className='registerparagraph' id='confirm'>
-                    <label for='confirm' className='registerlabel'>Confirm password:</label>
+                    <label htmlFor='confirm' className='registerlabel'>Confirm password:</label>
                     <p />
                     <input name='confirm' className='registerform' type='password' />
                 </p>
@@ -82,6 +84,13 @@ function RegistrationPage() {
                     <button className='submitregistration' type='submit'>Create user</button>
                 </p>
             </form>
+            {dialog === 1 && 
+            <p className='registerdialog'>
+                User has been created succesfully
+                <button className='dialogButton' onClick={() => setDialog(0)}>
+                    Ok
+                </button>
+            </p>}
         </div>
     )
 }
