@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import './LoginPage.css';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
     const [token, setToken] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,8 +40,9 @@ function LoginPage() {
             } else {
                 console.log(data.token)
                 setToken(data.token)
-                Cookies.set("Auth", token)
+                Cookies.set('Auth', token)
                 console.log(token);
+                navigate('/Admin');
             }
         })
     }
