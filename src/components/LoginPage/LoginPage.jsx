@@ -38,7 +38,7 @@ function LoginPage() {
             if (data.error) {
                 console.log(data.error)
             } else {
-                console.log(data.token)
+                console.log(data)
                 setToken(data.token)
                 Cookies.set('Auth', token)
                 console.log(token);
