@@ -1,0 +1,67 @@
+#email-login {
+    left: 20%;
+    position: fixed;
+    text-align: left;
+    top: 25%;
+    width: 50%;
+}
+
+#pass-login {
+    left: 20%;
+    position: fixed;
+    text-align: left;
+    top: 45%;
+    width: 50%;
+}
+
+.loginform {
+    font-size: 20px;
+    padding: 20px 20px;
+    width: 90%;
+}
+  
+.loginheader {
+    color: #798089;
+    font-size: 40px;
+    text-align: center;
+}
+
+.loginlabel {
+    display:flex;
+    flex-direction:column;
+}
+
+.loginpage {
+    background-color:#ffffff;
+    border-color: #d9c444;
+    border-radius: 10px;
+    border-style: groove;
+    height: 800px;
+    margin: auto;
+    transform: translateY(5%);
+    width: 700px;
+}
+
+.loginparagraph {
+    color: #798089;
+    font-size: 28px;
+    position: relative;
+    text-align: center;
+    transform: translateY(-30%);
+}
+
+
+.submitlogin {
+    background-image: linear-gradient(#fcea03, #bfb100);
+    border: none;
+    border-radius: 12px;
+    bottom: 10%;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
+    left: 35%;
+    margin: 0 auto;
+    padding: 30px 50px;
+    position: fixed;;
+}
