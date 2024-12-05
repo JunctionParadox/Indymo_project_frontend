@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import './RegistrationPage.css';
 
 function RegistrationPage() {
-    const [dialog, setDialog] = useState(0)
+    const [dialog, setDialog] = useState(0);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,6 +37,9 @@ function RegistrationPage() {
         else return console.log(response);
       })
     .then(setDialog(1))
+    .then((data) => {
+        console.log(data);
+    })
 
      console.log(JSONBODY)
     }
@@ -64,10 +69,10 @@ function RegistrationPage() {
                     <label htmlFor='userrole' className='registerlabel'>User role:</label>
                     <p />
                     <select name='userrole' className='registerform'>
-                        <option value="1">Analyst</option>
-                        <option value="2">Temporary worker</option>
-                        <option value="3">Client</option>
-                        <option value="4">Administrator</option>
+                        <option value="0">Analyst</option>
+                        <option value="1">Temporary worker</option>
+                        <option value="2">Client</option>
+                        <option value="3">Administrator</option>
                     </select>
                 </p>
                 <p className='registerparagraph' id='pass'>
