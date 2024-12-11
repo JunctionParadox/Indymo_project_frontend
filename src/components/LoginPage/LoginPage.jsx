@@ -40,11 +40,14 @@ function LoginPage() {
             } else {
                 console.log(data)
                 setToken(data.token)
-                Cookies.set('Auth', token)
-                console.log(token);
-                navigate('/Admin');
             }
         })
+        //TODO:: Fix token not updating after first login attempt
+        .then(
+            Cookies.set('Auth', token),
+            console.log(token),
+            navigate('/Admin')
+        )
     }
 
     return (

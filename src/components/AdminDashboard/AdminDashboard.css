@@ -1,0 +1,33 @@
+.AdminDashboard {
+  background-color:#bbbbbb;
+  margin: auto;
+  transform: translateY(5%);
+  height: 900px;
+  width: 1400px;
+}
+
+.AdminDataRow {
+  background-color: #ffffff;
+}
+
+.AdminHeaderRow th {
+  background-color: #65737e;
+  font-size: 140%;
+  padding: 1%;
+}
+
+.AdminDataRow:nth-child(odd) {
+  background-color: #dfdfdf;
+}
+
+.AdminTable {
+  justify-self: center;
+  width: 90%;
+  border-collapse: collapse;
+}
+
+.AdminTable td {
+  font-size: 140%;
+  padding-bottom: 1%;
+  padding-top: 2%;
+}
