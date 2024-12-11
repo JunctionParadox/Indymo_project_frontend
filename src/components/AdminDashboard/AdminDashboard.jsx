@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './AdminDashboard.css';
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function AdminDashboard() {
     const [table, setTable] = useState([]);
-    const navigate = useNavigate();
 
     const getUsers = async () => {
     await fetch('https://localhost:7171/api/users', {
@@ -37,16 +36,14 @@ function AdminDashboard() {
         }
     }, [table]);
 
-    useEffect(() =>{
-        navigate('/register')
-    })
-
     return (
 
         <div className='AdminDashboard'>
             <h1>List of users</h1>
             <p>
-                <button onClick={useEffect()}>+</button> Add user
+                <button>
+                    <NavLink to='/register'>Add user</NavLink>
+                </button>
             </p>
             <table className='AdminTable'>
                 <tr className='AdminHeaderRow'>
