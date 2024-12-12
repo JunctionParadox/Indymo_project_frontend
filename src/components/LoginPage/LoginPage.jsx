@@ -4,10 +4,10 @@ import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
-    const [token, setToken] = useState("");
+    const [loginFailed, setLoginFailed] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault();
     const FORM_DATA = new FormData(e.currentTarget);
     const EMAIL = FORM_DATA.get('email');
@@ -18,7 +18,7 @@ function LoginPage() {
         "Password": LOGIN.PASSWORD,
     })
 
-    fetch('https://localhost:7171/api/users/login', {
+    await fetch('https://localhost:7171/api/users/login', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -39,15 +39,20 @@ function LoginPage() {
                 console.log(data.error)
             } else {
                 console.log(data)
-                setToken(data.token)
+                Cookies.set('Auth', data.token)
+                navigate('/Admin')
             }
         })
+        .catch((error) => {
+            console.log(error)
+            setLoginFailed(true)
+        })
         //TODO:: Fix token not updating after first login attempt
-        .then(
-            Cookies.set('Auth', token),
-            console.log(token),
-            navigate('/Admin')
-        )
+        //.then(
+            //Cookies.set('Auth', token),
+            //console.log(token),
+            //navigate('/Admin')
+        //)
     }
 
     return (
@@ -67,6 +72,7 @@ function LoginPage() {
                     <input name='password' className='loginform' type='password' />
                 </p>
                 <p>
+                    {loginFailed === true && <a>Incorrect credentials</a>}
                     <button className='submitlogin' type='submit'>Login</button>
                 </p>
             </form>
