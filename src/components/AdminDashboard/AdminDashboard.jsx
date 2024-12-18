@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './AdminDashboard.css';
 import { NavLink } from 'react-router-dom';
 
+//This component displays a list of users
 function AdminDashboard() {
     const [table, setTable] = useState([]);
 
     const getUsers = async () => {
-    await fetch('https://localhost:7171/api/users', {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/users`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
@@ -22,20 +23,18 @@ function AdminDashboard() {
         .then((data) => {
             const info = data
             setTable(info);
-            //console.log(table)
+        })
+        .catch((error) => {
         });
     };
 
+    //The [] implies that the effect call has no dependencies
+    //As such, it will only be called once on page-load
     useEffect(() => {
-        //Check if any user is obtained before stopping retrieval
-        if(!table[0]) {
         getUsers();
-        }
-        else {
-            console.log(table[0]);
-        }
-    }, [table]);
+    }, []);
 
+    //the map function creates table rows for each
     return (
 
         <div className='AdminDashboard'>

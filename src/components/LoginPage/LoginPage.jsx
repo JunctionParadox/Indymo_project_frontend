@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import './LoginPage.css';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
+//Should have input validation
 function LoginPage() {
     const [loginFailed, setLoginFailed] = useState(false);
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ function LoginPage() {
         "Password": LOGIN.PASSWORD,
     })
 
-    await fetch('https://localhost:7171/api/users/login', {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/users/login`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

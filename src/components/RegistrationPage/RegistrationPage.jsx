@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
 import './RegistrationPage.css';
 
 function RegistrationPage() {
+    //Dialog is set to make a dialog box appear based on the result of attempting submit the form below
+    //0 = No dialog box, 1 = Request succesful, 2 = Request failed
+
+    //Should include a method to clear all input boxes on submittal
+    //Should have input validation
     const [dialog, setDialog] = useState(0);
-    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,25 +27,24 @@ function RegistrationPage() {
             "Role": REGISTRATION.ROLE
         })
     
-    fetch('https://localhost:7171/api/users/register', {
-       method: 'POST',
-       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-        body: JSONBODY
-    })
-    .then((response) => {
-        if(!response.ok) throw new Error(response.status);
-        else return console.log(response);
-      })
-    .then(setDialog(1))
-    .then((data) => {
-        console.log(data);
-    })
-
-     console.log(JSONBODY)
-    }
+        fetch(`${process.env.REACT_APP_API_URL}/api/users/register`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSONBODY
+        })
+        .then((response) => {
+            if(!response.ok) throw new Error(response.status);
+            else return setDialog(1);
+        })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            setDialog(2);
+        })}
 
     return (
         <div className='registerpage'>
@@ -52,7 +54,7 @@ function RegistrationPage() {
                 </h1>
                 <p className='registerparagraph' id='first'>
                     <label htmlFor='firstname' className='registerlabel'>First name:</label>
-                    <p />
+                <p />
                     <input name='firstname' className='registerform' type='text' />
                 </p>
                 <p className='registerparagraph' id='last'>
@@ -92,6 +94,13 @@ function RegistrationPage() {
             {dialog === 1 && 
             <p className='registerdialog'>
                 User has been created succesfully
+                <button className='dialogButton' onClick={() => setDialog(0)}>
+                    Ok
+                </button>
+            </p>}
+            {dialog === 2 &&
+            <p className='registerdialog'>
+                User could not be created
                 <button className='dialogButton' onClick={() => setDialog(0)}>
                     Ok
                 </button>
