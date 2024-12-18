@@ -1,0 +1,76 @@
+.assign {
+    padding: 20px 40px;
+    position: relative;
+}
+
+.OrderDashboard {
+    background-color:#bbbbbb;
+    margin: auto;
+    transform: translateY(5%);
+    height: 900px;
+    width: 1400px;
+}
+  
+.OrderDataRow, .NewOrderRow {
+    background-color: #ffffff;
+}
+  
+.OrderHeaderRow th {
+    background-color: #65737e;
+    font-size: 140%;
+    padding: 1%;
+}
+  
+.OrderDataRow:nth-child(odd), .NewOrderRow:nth-child(odd) {
+    background-color: #dfdfdf;
+}
+  
+.OrderTable, .OrderSearch, .NewOrders {
+    justify-self: center;
+    width: 90%;
+    border-collapse: collapse;
+}
+  
+.OrderTable td, .OrderSearch td, .NewOrders td {
+    font-size: 140%;
+    padding-bottom: 1%;
+    padding-top: 2%;
+}
+
+.submitworker {
+    background-image: linear-gradient(#fcea03, #bfb100);
+    border: none;
+    border-radius: 12px;
+    bottom: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    position: fixed;
+}
+
+.assignform {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: left;
+}
+
+.assignselect {
+    position: fixed;
+    margin: 0 auto;
+    font-size: 48px;
+    top: 35%;
+    height: 50px;
+    width: 300px;
+}
+
+.assignp {
+    position: fixed;
+    margin: 0 auto;
+    justify-self: center;
+    font-size: 36px;
+}
