@@ -1,0 +1,159 @@
+#company {
+    left: 10%;
+    position: fixed;
+    text-align: center;
+    top: 10%;
+    width: 35%;
+}
+
+#plandate {
+    right: 10%;
+    position: fixed;
+    text-align: center;
+    top: 10%;
+    width: 35%;
+}
+
+#measure {
+    left: 10%;
+    position: fixed;
+    text-align: center;
+    top: 20%;
+    width: 35%;
+}
+
+#parameter {
+    right: 10%;
+    position: fixed;
+    text-align: center;
+    top: 20%;
+    width: 35%;
+}
+
+#location {
+    left: 10%;
+    position: fixed;
+    text-align: center;
+    top: 30%;
+    width: 35%;
+}
+
+#remark {
+    right: 10%;
+    position: fixed;
+    text-align: center;
+    top: 30%;
+    width: 35%;
+}
+
+#video {
+    left: 10%;
+    position: fixed;
+    text-align: center;
+    top: 55%;
+    width: 35%;
+}
+
+#start {
+    right: 10%;
+    position: fixed;
+    text-align: center;
+    top: 40%;
+    width: 35%;
+}
+
+#end {
+    right: 10%;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 35%;
+}
+
+#depth {
+    left: 10%;
+    position: fixed;
+    text-align: center;
+    top: 40%;
+    width: 35%;
+}
+
+#contactfirst {
+    right: 10%;
+    position: fixed;
+    text-align: center;
+    top: 60%;
+    width: 35%;
+}
+
+#contactlast {
+    right: 10%;
+    position: fixed;
+    text-align: center;
+    top: 70%;
+    width: 35%;
+}
+
+#contactphone {
+    right: 10%;
+    position: fixed;
+    text-align: center;
+    top: 80%;
+    width: 35%;
+}
+
+.clientpage {
+    background-color:#ffffff;
+    border-color: #d9c444;
+    border-radius: 10px;
+    border-style: groove;
+    height: 800px;
+    margin: auto;
+    transform: translateY(5%);
+    width: 1400px;
+}
+
+.orderform-datetime {
+    text-align: center;
+}
+
+.ordercheck {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.ordercheck-label {
+    vertical-align: 40%;
+}
+
+.orderform, .orderform-datetime {
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 90%;
+}
+
+.orderlabel {
+    display:flex;
+    flex-direction:column;
+}
+
+.orderparagraph {
+    color: #798089;;
+    font-size: 24px;
+}
+
+.submitorder {
+    background-image: linear-gradient(#fcea03, #bfb100);
+    border: none;
+    border-radius: 12px;
+    bottom: 10%;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 30px;
+    left: 10%;
+    margin: 0 auto;
+    padding: 20px 40px;
+    position: fixed;
+}
