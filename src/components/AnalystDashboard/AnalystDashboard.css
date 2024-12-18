@@ -1,0 +1,66 @@
+.AnalystDashboard {
+    background-color:#ffffff;
+    border-color: #d9c444;
+    border-radius: 10px;
+    border-style: groove;
+    height: 1400px;
+    margin: auto;
+    width: 1400px;
+}
+
+.datatype {
+    background-color: #65737e;
+    display: block;
+    height: 5%;
+    width: 20%;
+}
+
+.number {
+    font-size: 24px;
+}
+
+.measurementstart {
+    background-color: #65737e;
+    position: relative;
+    font-size: 40px;
+    top: 35.7%;
+    left: 35.7%;
+    border-color: #d9c444;
+    border-radius: 10px;
+    height: 400px;
+    width: 400px;
+}
+
+.MeasurementCollection {
+    overflow-y:scroll;
+    height: 40%;
+    padding-top: 5%;
+}
+
+.MeasurementCollection table thead th .text {
+    position:absolute; 
+}
+
+.MeasurementDataRow {
+    background-color: #ffffff;
+}
+  
+.MeasurementRow th {
+    background-color: #65737e;
+    font-size: 140%;
+    padding: 1%;
+}
+  
+.MeasurementDataRow:nth-child(odd) {
+    background-color: #dfdfdf;
+}
+
+.MeasurementTable {
+    justify-self: center;
+    width: 96%;
+    border-collapse: collapse;
+}
+
+.measurementbutton {
+    padding: 10px 15px;
+}

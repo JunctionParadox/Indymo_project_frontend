@@ -1,0 +1,17 @@
+.indymoheader{
+    background-color: #999999;
+    border-radius: 10px;
+    padding: 5px 5px;
+    position: sticky;
+}
+
+.link{
+    padding-right: 40px;
+    border-color: #000000;
+}
+
+img {
+    width: 10%;
+    height: 12%;
+    object-fit: contain;
+}
